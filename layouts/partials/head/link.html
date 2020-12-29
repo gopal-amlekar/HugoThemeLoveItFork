@@ -16,7 +16,12 @@
     <link rel="manifest" href="/site.webmanifest">
 {{- end -}}
 
+{{ if .Params.canonicalUrl }}
+<link rel="canonical" href="{{ .Params.canonicalUrl }}">
+{{ else }}
 <link rel="canonical" href="{{ .Permalink }}" />
+{{ end }}
+
 {{- if .PrevInSection -}}
     <link rel="prev" href="{{ .PrevInSection.Permalink }}" />
 {{- end -}}
